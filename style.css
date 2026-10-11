@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  max-width: 420px;
+  width: 100%;
+  padding: 30px;
+}
+
+h1 {
+  text-align: center;
+  color: #2f2f2f;
+  margin-bottom: 24px;
+  font-size: 2rem;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.calendar-header button {
+  border: none;
+  background: #667eea;
+  color: white;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.calendar-header button:hover {
+  background: #5a69d8;
+}
+
+.calendar-header h2 {
+  flex: 1;
+  text-align: center;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.weekdays,
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.weekdays {
+  margin-bottom: 10px;
+}
+
+.weekday {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #667eea;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 8px 0;
+}
+
+.day {
+  background: #f5f6fb;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #303030;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.day:hover:not(.other):not(.disabled) {
+  background: #e8ebff;
+  transform: translateY(-1px);
+}
+
+.day.other {
+  background: transparent;
+  color: #c2c2c2;
+  cursor: default;
+}
+
+.day.disabled {
+  background: transparent;
+  color: #d0d0d0;
+  cursor: not-allowed;
+}
+
+.day.today {
+  border-color: #667eea;
+}
+
+.day.selected {
+  background: #667eea;
+  color: white;
+  border-color: #5a69d8;
+}
+
+.selected-date {
+  margin-top: 24px;
+  background: #f5f6fb;
+  border-radius: 10px;
+  padding: 18px 14px;
+  text-align: center;
+}
+
+.selected-date p {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.selected-date .date {
+  font-size: 1.2rem;
+  color: #2d2d2d;
+  font-weight: 700;
+}
+
+.today-btn {
+  width: 100%;
+  margin-top: 18px;
+  border: none;
+  border-radius: 10px;
+  background: #764ba2;
+  color: white;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.today-btn:hover {
+  background: #653d8c;
+}
